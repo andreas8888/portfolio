@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
+import toast from 'react-hot-toast';
 
 export const Contact = () => {
 
@@ -10,31 +11,77 @@ export const Contact = () => {
         message: ""
     });
 
+    const [isSending, setIsSending] = useState(false);
+    const [lastSent, setLastSent] = useState(0);
+
+    const handleChange = (e) =>{
+        const {name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    }
+
     const handleSubmit = (e) =>{
         e.preventDefault();
 
-        //todo: fixa alert toast!
+        if (e.target.website?.value !== "") {
+            console.warn("Bot detected. Submission blocked.");
+            return;
+        }
+
+        // Simple rate limiting (30 sec)
+        const now = Date.now();
+        if (now - lastSent < 15000) {
+            toast.error("Please wait before sending another message.");
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            toast.error("Enter a valid email address.");
+        return;
+        }
+        
+        if (formData.name.trim().length < 2) {
+            toast.error("Please enter your name.");
+            return;
+        }
+
+        if (formData.message.trim().length < 3) {
+            toast.error("Please atleast one word in your message.");
+            return;
+        }
+
+        setIsSending(true);
+
         emailjs.sendForm(
             import.meta.env.VITE_SERVICE_ID, 
             import.meta.env.VITE_TEMPLATE_ID,
             e.target, 
-            import.meta.env.VITE_PUBLIC_KEY).then((result) => {
-
-            alert("Andreas will get the notice!");
+            import.meta.env.VITE_PUBLIC_KEY).then((result) => 
+        {
+            setLastSent(now);
+            toast.success("Andreas got the message!");
             console.log(result.status);//todo
+            
+            e.target.reset();
             setFormData({name: "", email: "", message: ""});
 
-        }).catch(() => alert("Problem with the mail service!"));
+        })
+        .catch(() => {
+            setLastSent(now);
+            toast.error("Problem with the mail service!")
+        })
+        .finally(()=>{setIsSending(false)});
     }
 
     return(
         <section id="contact" className="min-h-screen flex items-center justify-center py-20">
             <RevealOnScroll>
-            <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
+            <div className="bg-black px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
             <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
                 Get In Touch
             </h2>
             <form className="space-y-6" onSubmit={handleSubmit}>
+                <input type="hidden" name="website" className="hidden" autoComplete="off" />
                 <div className="relative">
                     <input
                     type="text"
@@ -44,9 +91,7 @@ export const Contact = () => {
                     value={formData.name}
                     className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
                     placeholder="Name..."
-                    onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                    }   
+                    onChange={handleChange}  
                 />
                 </div>  
 
@@ -59,9 +104,7 @@ export const Contact = () => {
                     value={formData.email}
                     className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
                     placeholder="example@gmail.com"
-                    onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                    }
+                    onChange={handleChange}
                 />
                 </div>
 
@@ -74,14 +117,15 @@ export const Contact = () => {
                     value={formData.message}
                     className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
                     placeholder="Your Message..."
-                    onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                    }
+                    onChange={handleChange}
                     />
                 </div>
-                <button type="submit" className="w-full bg-blue-500 text-white py-3 px-6 rounded 
-                font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]">
-                Send Message
+                <button type="submit" disabled={isSending}
+                    className={`w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden ${
+                        isSending ? 'opacity-50 cursor-not-allowed' : 'hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]'
+                    }`}
+                >
+                    {isSending ? "Sending..." : "Send Message"}
                 </button>
             </form>
             </div>
