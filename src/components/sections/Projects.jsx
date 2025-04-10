@@ -166,7 +166,7 @@ export const Projects = () => {
                         >
                             <h3 className="text-xl font-bold mb-2">Hemprojekt🎓</h3>
                             <p className="text-gray-400 mb-4">
-                            Ett av många är att jag för tillfället bygger en webbserver i c++ med hjälp av 
+                            Ett av många är att det för tillfället arbetas på en webbserver i c++ med hjälp av 
                             httplib och open ssl. Med react webb. (demo kommer nog snart)
                             </p>
                             <div className="flex flex-wrap gap-2 mb-4">
