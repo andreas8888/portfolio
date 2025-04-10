@@ -1,21 +1,20 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
-import { useEffect, useState } from "react"; // Här importerar vi useEffect och useState från React
+import { useEffect, useState } from "react";
 
 const AnimatedStars = () => {
 
   const { scene } = useThree();
   
-  // Roterar stjärnorna kontinuerligt
   useFrame(() => {
-    scene.rotation.y -= 0.00007; // Roterar scenen för att skapa rörelse på stjärnorna
+    scene.rotation.y -= 0.00009; 
   });
 
   return (
     <Stars
       radius={100} // Hur långt bort stjärnorna är
       depth={50}   // Hur djupt in i rymden
-      count={1600} // Antal stjärnor
+      count={600} // Antal stjärnor
       factor={5}   // Storleksfaktor
       saturation={0} // 0 = vit
       fade={true}  // Fade-effekt
@@ -35,12 +34,11 @@ const MovingCamera = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []); // Sätt tom array för att endast lyssna på scroll när komponenten mountas
+  }, []); 
 
   useFrame(() => {
-    // Mappa scrollY till en Z-position
-    const targetZ = 1 - scrollY * 0.02;
-    camera.position.z += (targetZ - camera.position.z) * 0.1; // smooth lerp
+    const targetZ = 1 + scrollY * 0.03;
+    camera.position.z += (targetZ - camera.position.z) * 0.6;
   });
 
   return null;

@@ -16,7 +16,6 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   
-  //rensa bort # vid omladdning
   useEffect(() => {
     if (window.location.hash) {
       const noHashURL = window.location.href.replace(window.location.hash, "");

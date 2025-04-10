@@ -7,12 +7,12 @@ html{
 body{
   margin: 0;
   padding: 0;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Source Code Pro", monospace;
   color: #f3f4f6;
 }
 
 @layer utilities{
-  @keyframes blink {
+  @keyframes blink {s
     0%, 100%{
       opacity: 1;
     }

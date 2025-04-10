@@ -23,7 +23,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen}) => {
                     : "opacity-0 translate-y-5"
                 }        
             `}>
-                Home
+                Hem
             </a>
             <a href="#about" onClick={() => setMenuOpen(false)}
             className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
@@ -31,7 +31,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen}) => {
                     menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
                 }        
             `}>
-                About
+                Om
             </a>
             <a href="#projects" onClick={() => setMenuOpen(false)}
             className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
@@ -39,7 +39,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen}) => {
                     menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
                 }        
             `}>
-                Projects
+                Erfarenhet
             </a>
             <a href="#contact" onClick={() => setMenuOpen(false)}
             className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
@@ -47,7 +47,7 @@ export const MobileMenu = ({menuOpen, setMenuOpen}) => {
                     menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
                 }        
             `}>
-                Contact
+                Kontakt
             </a>
         </div>
     );

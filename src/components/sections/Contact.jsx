@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import emailjs from "emailjs-com";
+import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 
 export const Contact = () => {
@@ -27,7 +27,6 @@ export const Contact = () => {
             return;
         }
 
-        // Simple rate limiting (30 sec)
         const now = Date.now();
         if (now - lastSent < 15000) {
             toast.error("Please wait before sending another message.");
@@ -59,7 +58,7 @@ export const Contact = () => {
             import.meta.env.VITE_PUBLIC_KEY).then((result) => 
         {
             setLastSent(now);
-            toast.success("Andreas got the message!");
+            toast.success("Andreas fick meddelandet!");
             console.log(result.status);//todo
             
             e.target.reset();
@@ -68,7 +67,7 @@ export const Contact = () => {
         })
         .catch(() => {
             setLastSent(now);
-            toast.error("Problem with the mail service!")
+            toast.error("Tillfälligt problem med mailtjänsten!")
         })
         .finally(()=>{setIsSending(false)});
     }
@@ -78,7 +77,7 @@ export const Contact = () => {
             <RevealOnScroll>
             <div className="bg-black px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
             <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-                Get In Touch
+                Hör av dig
             </h2>
             <form className="space-y-6" onSubmit={handleSubmit}>
                 <input type="hidden" name="website" className="hidden" autoComplete="off" />
@@ -125,7 +124,7 @@ export const Contact = () => {
                         isSending ? 'opacity-50 cursor-not-allowed' : 'hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]'
                     }`}
                 >
-                    {isSending ? "Sending..." : "Send Message"}
+                    {isSending ? "Skickar..." : "Skicka meddelande"}
                 </button>
             </form>
             </div>

@@ -18,11 +18,8 @@ export const RevealOnScroll = ({children}) => {
         if(ref.current)
             observer.observe(ref.current);
 
-        //fixa minnesläckor
         return () => observer.disconnect();
     });
-
-    //Ej tailwindcss, vanilla css.
     return (
         <div ref={ref} className="reveal">
             {children}

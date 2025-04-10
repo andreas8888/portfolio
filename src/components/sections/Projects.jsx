@@ -6,45 +6,23 @@ export const Projects = () => {
             <RevealOnScroll>
                 <div className="max-w-5xl mx-auto px-4 bg-black">
                     <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-                        Featured Projects
+                        Relevant Erfarenhet
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-                            <h3 className="text-xl font-bold mb-2">Quick brown dogs</h3>
-                            <p className="text-gray-400 mb-4">
-                            jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump.
-                            </p>
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {["React", "Node.js", "AWS", "Docker"].map((tech, key) => (
-                                    <span
-                                        key={key}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all"
-                                    >
-                                    {tech}
-                                    </span>
-                                ))}
-                            </div>
-
-                            <div className="flex justify-between items-center">
-                                <a
-                                    href="#"
-                                    className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                                >
-                                    View Project →
-                                </a>
-                            </div>
-                        </div>
+                        
                         <div className="glass p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30
                         hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
                         transition-all"
                         >
-                            <h3 className="text-xl font-bold mb-2">Flummoxed by job</h3>
+                            <h3 className="text-xl font-bold mb-2">HR system💼</h3>
                             <p className="text-gray-400 mb-4">
-                            kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box.
+                            Personalsystem för medarbetare och chefer i en större organisation. 
+                            Systemets är byggt med ASP.NET MVC
+                            med MSSQL som databas. Arbetet innebar att skriva en hel del SQL, och hantera support samt
+                            vidareutveckla funktionalitet.
                             </p>
                             <div className="flex flex-wrap gap-2 mb-4">
-                                {["Python", "TensorFlow", "D3.js", "Flask"].map((tech, key) => (
+                                {["C#", "JQuery", "MSSQL", "ASP.NET","MVC","Javascript","Entity Framework","Team Foundation Server"].map((tech, key) => (
                                     <span
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 py-1 px-3 
@@ -58,9 +36,7 @@ export const Projects = () => {
                                 ))}
                             </div>
                             <div className="flex justify-between items-center">
-                                <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors my-4">
-                                    View Project →
-                                </a>
+                               
                             </div>
                         </div>
 
@@ -69,12 +45,17 @@ export const Projects = () => {
                         hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
                         transition-all
                         ">
-                            <h3 className="text-xl font-bold mb-2">Two driven jocks</h3>
+                            <h3 className="text-xl font-bold mb-2">System för skogsskötsel💼</h3>
                             <p className="text-gray-400 mb-4">
-                            help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack! " my brave ghost pled. Five quacking zephyrs jolt my wax bed.
+                            Portal för skogsvårdsobjekt och arbetsplanering. Stora delar är av systemet är
+                            byggt i .NET och ASP.NET. Består av windows tjänster, interaktiva webbkartor och utskrifter, MSMQ, MSSQL server. 
+                            Integration till karttjänster med hjälp av ArcGis stacken samt javascript SDK. Hantering av
+                            Forest Standard filer. En hel del integrationer med hjälp av Azure och WCF samt via api hantering.
+                            Verksamhetskritiskt. Arbetet innehöll bland annat Förvaltning, utvecklingsprojekt, supportansvar.
                             </p>
                             <div className="flex flex-wrap gap-2 mb-4">
-                                {["Next.js", "TypeScript", "Stripe", "PostgreSQL"].map(
+                                {["C#", ".NET", "LinQ", "Enityt Framework","ArcGIS", "Javascript","ASP.NET","REST-api","MSQM"
+                                ,"SQL","Windows server","CI/CD","AzureDevops","Python","JIRA","SCRUM","Agilt"].map(
                                     (tech) => (
                                         <span
                                             key={tech}
@@ -89,12 +70,89 @@ export const Projects = () => {
                                 )}
                             </div>
                             <div className="flex justify-between items-center">
-                                <a
-                                    href="#"
-                                    className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                                >
-                                    View Project →
-                                </a>
+                                
+                            </div>
+                        </div>
+                        <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+                            <h3 className="text-xl font-bold mb-2">system för utbytesberäkning💼</h3>
+                            <p className="text-gray-400 mb-4">
+                            System som simulerar och beräknar utbytet åt skogsägare. 
+                            Systemet är byggt i .NET. Frontend en MVC med Angular.js med integrerad karta. Web API och ett flertal windowstjänster.
+                            MSSQL databas. R skript för datahantering. Integrationer. MSMQ. Verksamhetskritiskt.     
+                            </p>
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {["MSSQL", ".NET C#", "R", "Javascript", "MVC", "web api", "AzureDevops", "YAML","Windows server"].map((tech, key) => (
+                                    <span
+                                        key={key}
+                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
+                                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all"
+                                    >
+                                    {tech}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="flex justify-between items-center">
+                                
+                            </div>
+                        </div>
+                        <div className="glass p-6 rounded-xl border border-white/10 
+                        hover:-translate-y-1 hover:border-blue-500/30
+                        hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
+                        transition-all"
+                        >
+                            <h3 className="text-xl font-bold mb-2">Övriga åtaganden💼</h3>
+                            <p className="text-gray-400 mb-4">
+                            Andreas har varit med i en rad övriga åtaganden i olika system. Bland annat
+                            problemlösning för bank och räntesystem, och i olika typer av logistiksystem
+                            både på serversidan och klientsidan. konfiguerart och driftsatt applikationer
+                            på främst windows server 2022, felsökning och support.
+                            </p>
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
+                                    <span
+                                        key={key}
+                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 
+                                        rounded-full text-sm transition
+                                        hover:bg-blue-500/20 hover:-translate-y-0.5
+                                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]"
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                            <div className="flex justify-between items-center ">
+                                
+                            </div>
+                        </div>
+                        
+                        <div className="glass p-6 rounded-xl border border-white/10 
+                        hover:-translate-y-1 hover:border-blue-500/30
+                        hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
+                        transition-all"
+                        >
+                            <h3 className="text-xl font-bold mb-2">Övrigt inom förvaltning</h3>
+                            <p className="text-gray-400 mb-4">
+                            Andreas har varit med att dokumentera system och tagit fram Wikis i AzureDevops. Han har även 
+                            varit med och flyttat och uppgraderat äldre system upp till Molnet(Azure) vilket innebar Refaktorisering och 
+                            konfiguration. Stor erfarenhet av ärendehantering och kundkontakt. Erfarenhet av att arbeta i stora
+                            samverkande grupper i en organisation.
+                            </p>
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
+                                    <span
+                                        key={key}
+                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 
+                                        rounded-full text-sm transition
+                                        hover:bg-blue-500/20 hover:-translate-y-0.5
+                                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]"
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                            <div className="flex justify-between items-center ">
+                                
                             </div>
                         </div>
 
@@ -103,9 +161,10 @@ export const Projects = () => {
                         hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
                         transition-all"
                         >
-                            <h3 className="text-xl font-bold mb-2">Quick wafting</h3>
+                            <h3 className="text-xl font-bold mb-2">Hemprojekt🎓</h3>
                             <p className="text-gray-400 mb-4">
-                            zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex.
+                            Ett av många är att jag för tillfället bygger en webbserver i c++ med hjälp av 
+                            httplib och open ssl. Med react webb. (demo kommer nog snart)
                             </p>
                             <div className="flex flex-wrap gap-2 mb-4">
                                 {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
@@ -122,10 +181,10 @@ export const Projects = () => {
                             </div>
                             <div className="flex justify-between items-center ">
                                 <a
-                                    href="#"
+                                    href="https://github.com/andreas8888" target="_blank"
                                     className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                                 >
-                                    View Project →
+                                    Visa projekt →
                                 </a>
                             </div>
                         </div>
