@@ -4,13 +4,13 @@ export const About = () => {
 
     const basicITskills = 
     [
-        "C", "C++", "C#", "JavaScript", "Java","Node.js","GIS",
+        "C", "C++", "C#", "JavaScript", "Java","Node.js","GIS","TailwindCSS",
         "Python", "SQL", "CSS", "HTML", "XML","XAML","R","PHP","Git"
     ];
     const advancedITskills = 
     [
         ".NET", "CI/CD", "React.js", "REST","ArcGis javascript","Arc GIS","MSSQL","SQLite",
-        "Web API","MAUI","WPF","LinQ","WCF","Windows server","MSMQ",".NET CORE","Entity Framework"
+        "Web API","MAUI","WPF","LinQ","WCF","Windows server","MSMQ",".NET CORE","Entity Framework",
     ];
     const Softskills = 
     [

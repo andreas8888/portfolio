@@ -109,7 +109,9 @@ export const Projects = () => {
                             på främst windows server 2022, felsökning och support.
                             </p>
                             <div className="flex flex-wrap gap-2 mb-4">
-                                {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
+                                {[".NET", "MVC", "REST","WebAPI", "C#", "Postman", "SQL", "ArcGIS", "ArcGIS Server", "Windows server", 
+                                "JIRA", "AzureDevops", "CI/CD", "Scripting", "MSSQL Server", "QGis", "LinQ", "Entity Framework", "Visual Studio", 
+                                "WCF", "MSMQ"].map((tech, key) => (
                                     <span
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 py-1 px-3 
@@ -135,11 +137,12 @@ export const Projects = () => {
                             <p className="text-gray-400 mb-4">
                             Andreas har varit med att dokumentera system och tagit fram Wikis i AzureDevops. Han har även 
                             varit med och flyttat och uppgraderat äldre system upp till Molnet(Azure) vilket innebar Refaktorisering och 
-                            konfiguration. Stor erfarenhet av ärendehantering och kundkontakt. Erfarenhet av att arbeta i stora
-                            samverkande grupper i en organisation.
+                            konfiguration, sätta upp CI/CD flöde och övrig automatisering. Stor erfarenhet av ärendehantering och kundkontakt. 
+                            Erfarenhet av att arbeta i stora samverkande grupper i en organisation.
                             </p>
                             <div className="flex flex-wrap gap-2 mb-4">
-                                {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
+                                {["MIRO", "Kanban", "SCRUM", "Agil", ".NET", "AzureDevops", "CI/CD", "YAML", "JIRA", 
+                                "Microsoft", "Windows Server", "WCF", "WebAPI"].map((tech, key) => (
                                     <span
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 py-1 px-3 
@@ -167,7 +170,7 @@ export const Projects = () => {
                             httplib och open ssl. Med react webb. (demo kommer nog snart)
                             </p>
                             <div className="flex flex-wrap gap-2 mb-4">
-                                {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
+                                {["OpenSSL", "C++", "React", "html","TailwindCSS","SQLite"].map((tech, key) => (
                                     <span
                                         key={key}
                                         className="bg-blue-500/10 text-blue-500 py-1 px-3 

@@ -11,7 +11,7 @@ export const Home = () => {
             </h1>
 
             <p className="tex-gray-400 text-lg mb-8 max-w-lg mx-auto">
-                Andreas är en Systemutvecklare med brett tekniskt intresse och erfarenhet. Gedigen kunskap inom .net och Microsofts miljöer.
+                Andreas är en Systemutvecklare med brett tekniskt intresse och erfarenhet. Gedigen kunskap inom .NET och Microsofts miljö.
                 God problemlösare med Fullstackprofil.
             </p>
             <div className="flex justify-center space-x-4">

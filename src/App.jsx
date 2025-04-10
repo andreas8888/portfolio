@@ -10,12 +10,13 @@ import { Projects } from "./components/sections/Projects";
 import { Contact } from "./components/sections/Contact";
 import { Toaster } from 'react-hot-toast';
 import { StarfieldBackground } from "./components/StarfieldBackground";
+import { ScrollToTopButton } from "./components/ScrollToTopButton";
 
 function App() {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  
+
   useEffect(() => {
     if (window.location.hash) {
       const noHashURL = window.location.href.replace(window.location.hash, "");
@@ -59,6 +60,7 @@ function App() {
           <About></About>
           <Projects></Projects>
           <Contact></Contact>
+          <ScrollToTopButton />
       </div>
     </>
   );
