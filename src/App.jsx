@@ -28,13 +28,10 @@ function App() {
   return (
     <>
       <StarfieldBackground />
-      
-      {!isLoaded && <LoadingScreen onComplete={()=> setIsLoaded(true)}></LoadingScreen>}{""}
-      
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Navbar>
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       
-      <div className={`min-h-screen transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}
+      <div className={`min-h-screen transition-opacity overflow-visible duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}
           text-gray-100`}>  
           
           <Toaster position="bottom-center"
@@ -56,12 +53,13 @@ function App() {
               },
             },
           }} />
-          <Home></Home>
-          <About></About>
-          <Projects></Projects>
-          <Contact></Contact>
+          <Home />
+          <About />
+          <Projects />
+          <Contact />     
           <ScrollToTopButton />
       </div>
+      {!isLoaded && <LoadingScreen onComplete={()=> setIsLoaded(true)}></LoadingScreen>}{""}
     </>
   );
 }
