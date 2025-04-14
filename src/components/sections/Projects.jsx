@@ -5,16 +5,14 @@ export const Projects = () => {
         <section id="projects" className="min-h-screen flex items-center justify-center py-20">
             <RevealOnScroll>
                 <div className="max-w-5xl mx-auto px-4 bg-black">
-                    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+                    <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-400 bg-clip-text text-transparent text-center">
                         Relevant Erfarenhet
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         
-                        <div className="glass p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30
-                        hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-                        transition-all"
+                        <div className="p-6 rounded-xl border border-white/10 hover:border-pink-500/30 hover:shadow-[0_4px_20px_rgba(255,105,180,0.3)] transition-all"
                         >
-                            <h3 className="text-xl font-bold mb-2">HR system💼</h3>
+                            <h3 className="text-2xl font-bold text-gray-300 mb-2">HR system💼</h3>
                             <p className="text-gray-400 mb-4">
                             Personalsystem för medarbetare och chefer i en större organisation. 
                             Systemets är byggt med ASP.NET MVC
@@ -25,11 +23,7 @@ export const Projects = () => {
                                 {["C#", "JQuery", "MSSQL", "ASP.NET","MVC","Javascript","Entity Framework","Team Foundation Server"].map((tech, key) => (
                                     <span
                                         key={key}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 
-                                        rounded-full text-sm
-                                        transition
-                                        hover:bg-blue-500/20 hover:-translate-y-0.5
-                                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]               "
+                                        className="bg-pink-500/10 text-pink-500 py-1 px-3 rounded-full text-sm transition hover:bg-pink-500/20 hover:-translate-y-0.5"
                                     >
                                         {tech}
                                     </span>
@@ -40,12 +34,9 @@ export const Projects = () => {
                             </div>
                         </div>
 
-                        <div className="glass p-6 rounded-xl border border-white/10 
-                        hover:-translate-y-1 hover:border-blue-500/30
-                        hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-                        transition-all
+                        <div className="p-6 rounded-xl border border-white/10 hover:border-pink-500/30 hover:shadow-[0_4px_20px_rgba(255,105,180,0.3)] transition-all
                         ">
-                            <h3 className="text-xl font-bold mb-2">System för skogsskötsel💼</h3>
+                            <h3 className="text-2xl font-bold text-gray-300 mb-2">System för skogsskötsel💼</h3>
                             <p className="text-gray-400 mb-4">
                             Portal för skogsvårdsobjekt och arbetsplanering. Stora delar är av systemet är
                             byggt i .NET och ASP.NET. Består av windows tjänster, interaktiva webbkartor och utskrifter, MSMQ, MSSQL server. 
@@ -59,10 +50,7 @@ export const Projects = () => {
                                     (tech) => (
                                         <span
                                             key={tech}
-                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 
-                                            rounded-full text-sm transition
-                                            hover:bg-blue-500/20 hover:-translate-y-0.5
-                                            hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]"
+                                            className="bg-pink-500/10 text-pink-500 py-1 px-3 rounded-full text-sm transition hover:bg-pink-500/20 hover:-translate-y-0.5"
                                         >
                                             {tech}
                                         </span>
@@ -73,8 +61,8 @@ export const Projects = () => {
                                 
                             </div>
                         </div>
-                        <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-                            <h3 className="text-xl font-bold mb-2">system för utbytesberäkning💼</h3>
+                        <div className="p-6 rounded-xl border border-white/10 hover:border-pink-500/30 hover:shadow-[0_4px_20px_rgba(255,105,180,0.3)] transition-all">
+                            <h3 className="text-2xl font-bold text-gray-300 mb-2">system för utbytesberäkning💼</h3>
                             <p className="text-gray-400 mb-4">
                             System som simulerar och beräknar utbytet åt skogsägare. 
                             Systemet är byggt i .NET. Frontend en MVC med Angular.js med integrerad karta. Web API och ett flertal windowstjänster.
@@ -84,8 +72,7 @@ export const Projects = () => {
                                 {["MSSQL", ".NET C#", "R", "Javascript", "MVC", "web api", "AzureDevops", "YAML","Windows server"].map((tech, key) => (
                                     <span
                                         key={key}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.1)] transition-all"
+                                        className="bg-pink-500/10 text-pink-500 py-1 px-3 rounded-full text-sm transition hover:bg-pink-500/20 hover:-translate-y-0.5"
                                     >
                                     {tech}
                                     </span>
@@ -96,12 +83,9 @@ export const Projects = () => {
                                 
                             </div>
                         </div>
-                        <div className="glass p-6 rounded-xl border border-white/10 
-                        hover:-translate-y-1 hover:border-blue-500/30
-                        hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-                        transition-all"
+                        <div className="p-6 rounded-xl border border-white/10 hover:border-pink-500/30 hover:shadow-[0_4px_20px_rgba(255,105,180,0.3)] transition-all"
                         >
-                            <h3 className="text-xl font-bold mb-2">Övriga åtaganden💼</h3>
+                            <h3 className="text-2xl font-bold text-gray-300 mb-2">Övriga åtaganden💼</h3>
                             <p className="text-gray-400 mb-4">
                             Andreas har varit med i en rad övriga åtaganden i olika system. Bland annat
                             problemlösning för bank och räntesystem, och i olika typer av logistiksystem
@@ -114,10 +98,7 @@ export const Projects = () => {
                                 "WCF", "MSMQ"].map((tech, key) => (
                                     <span
                                         key={key}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 
-                                        rounded-full text-sm transition
-                                        hover:bg-blue-500/20 hover:-translate-y-0.5
-                                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]"
+                                        className="bg-pink-500/10 text-pink-500 py-1 px-3 rounded-full text-sm transition hover:bg-pink-500/20 hover:-translate-y-0.5"
                                     >
                                         {tech}
                                     </span>
@@ -128,12 +109,9 @@ export const Projects = () => {
                             </div>
                         </div>
                         
-                        <div className="glass p-6 rounded-xl border border-white/10 
-                        hover:-translate-y-1 hover:border-blue-500/30
-                        hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-                        transition-all"
+                        <div className="p-6 rounded-xl border border-white/10 hover:border-pink-500/30 hover:shadow-[0_4px_20px_rgba(255,105,180,0.3)] transition-all"
                         >
-                            <h3 className="text-xl font-bold mb-2">Övrigt inom förvaltning</h3>
+                            <h3 className="text-2xl font-bold text-gray-300 mb-2">Övrigt inom förvaltning</h3>
                             <p className="text-gray-400 mb-4">
                             Andreas har varit med att dokumentera system och tagit fram Wikis i AzureDevops. Han har även 
                             varit med och flyttat och uppgraderat äldre system upp till Molnet(Azure) vilket innebar Refaktorisering och 
@@ -145,10 +123,7 @@ export const Projects = () => {
                                 "Microsoft", "Windows Server", "WCF", "WebAPI"].map((tech, key) => (
                                     <span
                                         key={key}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 
-                                        rounded-full text-sm transition
-                                        hover:bg-blue-500/20 hover:-translate-y-0.5
-                                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]"
+                                        className="bg-pink-500/10 text-pink-500 py-1 px-3 rounded-full text-sm transition hover:bg-pink-500/20 hover:-translate-y-0.5"
                                     >
                                         {tech}
                                     </span>
@@ -159,12 +134,9 @@ export const Projects = () => {
                             </div>
                         </div>
 
-                        <div className="glass p-6 rounded-xl border border-white/10 
-                        hover:-translate-y-1 hover:border-blue-500/30
-                        hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
-                        transition-all"
+                        <div className="p-6 rounded-xl border border-white/10 hover:border-pink-500/30 hover:shadow-[0_4px_20px_rgba(255,105,180,0.3)] transition-all"
                         >
-                            <h3 className="text-xl font-bold mb-2">Hemprojekt🎓</h3>
+                            <h3 className="text-2xl font-bold text-gray-300 mb-2">Hemprojekt🎓</h3>
                             <p className="text-gray-400 mb-4">
                             Ett av många är att det för tillfället arbetas på en webbserver i c++ med hjälp av 
                             httplib och open ssl. Med react webb. (demo kommer nog snart)
@@ -173,10 +145,7 @@ export const Projects = () => {
                                 {["OpenSSL", "C++", "React", "html","TailwindCSS","SQLite"].map((tech, key) => (
                                     <span
                                         key={key}
-                                        className="bg-blue-500/10 text-blue-500 py-1 px-3 
-                                        rounded-full text-sm transition
-                                        hover:bg-blue-500/20 hover:-translate-y-0.5
-                                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)]"
+                                        className="bg-pink-500/10 text-pink-500 py-1 px-3 rounded-full text-sm transition hover:bg-pink-500/20 hover:-translate-y-0.5"
                                     >
                                         {tech}
                                     </span>
@@ -185,7 +154,8 @@ export const Projects = () => {
                             <div className="flex justify-between items-center ">
                                 <a
                                     href="https://github.com/andreas8888" target="_blank"
-                                    className="text-blue-400 hover:text-blue-300 transition-colors my-4"
+                                    className="py-1 px-3 rounded-full text-cyan-400 hover:text-cyan-300 decoration-cyan-500 transition-all my-4 hover:shadow-[0_0_10px_rgba(34,211,238,0.5)]"
+
                                 >
                                     Visa projekt →
                                 </a>

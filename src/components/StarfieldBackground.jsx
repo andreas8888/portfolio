@@ -1,13 +1,14 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
+import * as THREE from "three";
 
 const AnimatedStars = () => {
 
   const { scene } = useThree();
-  
+
   useFrame(() => {
-    scene.rotation.y -= 0.00009; 
+    scene.rotation.y -= 0.00009;
   });
 
   return (
@@ -34,11 +35,38 @@ const MovingCamera = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []); 
+  }, []);
 
   useFrame(() => {
     const targetZ = 1 + scrollY * 0.03;
     camera.position.z += (targetZ - camera.position.z) * 0.6;
+  });
+
+  return null;
+};
+
+const BackgroundFade = () => {
+  const { scene } = useThree();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const startColor = useMemo(() => new THREE.Color("#000414"), []);
+  const endColor = useMemo(() => new THREE.Color("#000000"), []);
+  const bgColor = useRef(new THREE.Color("#000414"));
+
+  useFrame(() => {
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = Math.min(scrollY / (maxScroll / 2), 1);
+
+    bgColor.current.copy(startColor).lerp(endColor, scrollPercent);
+    scene.background = bgColor.current;
   });
 
   return null;
@@ -58,9 +86,10 @@ export const StarfieldBackground = () => {
         pointerEvents: "none",
       }}
     >
-      <color attach="background" args={["#000000"]} />
+      <color attach="background" args={["#000414"]} />
       <AnimatedStars />
       <MovingCamera />
+      <BackgroundFade />
     </Canvas>
   );
 };

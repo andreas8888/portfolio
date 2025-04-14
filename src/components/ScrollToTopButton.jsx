@@ -21,11 +21,17 @@ export const ScrollToTopButton = () => {
     <button
       onClick={scrollToTop}
       aria-label="Scroll to top"
-      className={`fixed bottom-6 right-6 p-4 rounded-full z-50 shadow-xl transition-opacity duration-500 ease-in-out bg-black text-white hover:bg-gray-800 ${
+      className={`fixed bottom-6 right-6 p-3 rounded-full z-50 transition-all duration-300 ease-in-out
+      bg-[rgba(15,15,30,0.85)] backdrop-blur-xs border border-cyan-500/20 shadow-[0_0_20px_rgba(34,211,238,0.1)] 
+      hover:shadow-[0_0_25px_rgba(34,211,238,0.4)] hover:border-cyan-400/40 hover:scale-105 
+      text-cyan-300 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <ArrowUp size={28} className="stroke-2" />
+      <ArrowUp
+        size={24}
+        className="stroke-[2.5] text-cyan-300 drop-shadow-[0_0_4px_rgba(34,211,238,0.2)]"
+      />
     </button>
   );
 };

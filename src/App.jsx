@@ -11,6 +11,7 @@ import { Contact } from "./components/sections/Contact";
 import { Toaster } from 'react-hot-toast';
 import { StarfieldBackground } from "./components/StarfieldBackground";
 import { ScrollToTopButton } from "./components/ScrollToTopButton";
+import { Footer } from "./components/Footer";
 
 function App() {
 
@@ -58,6 +59,7 @@ function App() {
           <Projects />
           <Contact />     
           <ScrollToTopButton />
+          <Footer />
       </div>
       {!isLoaded && <LoadingScreen onComplete={()=> setIsLoaded(true)}></LoadingScreen>}{""}
     </>

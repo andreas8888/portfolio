@@ -48,11 +48,11 @@ export const About = () => {
     return (
         <section id="about" className="min-h-screen flex items-center justify-center py-20">
             <RevealOnScroll>
-                <div className="bg-black max-w-3xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+                <div className="max-w-3xl mx-auto px-4">
+                    <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-400 bg-clip-text text-transparent text-center">
                         Om Andreas
                     </h2>
-                    <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
+                    <div className="rounded-xl p-8">
                         <p className="text-gray-300 mb-6">
                             Andreas har 10 års erfarenhet av IT-konstult rollen och har under åren samlat på sig en rad olika
                             erfarenheter. Bland annat i .NET och Microsofts tekniker och verktyg. Andreas är en problemlösare, 
@@ -63,60 +63,60 @@ export const About = () => {
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                                <h3 className="text-xl font-bold mb-4"> Grundläggande</h3>
+                                <h3 className="text-xl text-gray-300 font-bold mb-4"> Grundläggande</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {basicITskills.map((tech, key) => (
                                         <span
                                             key={key}
-                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                            hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+                                            className="bg-pink-600/10 text-pink-400 py-1 px-3 rounded-full text-sm hover:bg-pink-600/20 
+                                            hover:shadow-[0_2px_8px_rgba(255,105,180,0.3)] transition">
                                             {tech}
                                         </span>
                                     ))}
                                 </div>
                             </div>
                             <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                                <h3 className="text-xl font-bold mb-4"> Teknik</h3>
+                                <h3 className="text-xl text-gray-300 font-bold mb-4"> Teknik</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {advancedITskills.map((tech, key) => (
                                         <span
                                             key={key}
-                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                            hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+                                            className="bg-pink-600/10 text-pink-400 py-1 px-3 rounded-full text-sm hover:bg-pink-600/20 
+                                            hover:shadow-[0_2px_8px_rgba(255,105,180,0.3)] transition">
                                             {tech}
                                         </span>
                                     ))}
                                 </div>
                             </div>
                             <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                                <h3 className="text-xl font-bold mb-4"> Specifikt</h3>
+                                <h3 className="text-xl text-gray-300 font-bold mb-4"> Specifikt</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {jobSpecificskills.map((tech, key) => (
                                         <span
                                             key={key}
-                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                            hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+                                            className="bg-pink-600/10 text-pink-400 py-1 px-3 rounded-full text-sm hover:bg-pink-600/20 
+                                            hover:shadow-[0_2px_8px_rgba(255,105,180,0.3)] transition">
                                             {tech}
                                         </span>
                                     ))}
                                 </div>
                             </div>
                             <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                                <h3 className="text-xl font-bold mb-4"> Mjuka färdigheter</h3>
+                                <h3 className="text-xl text-gray-300 font-bold mb-4"> Mjuka färdigheter</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {Softskills.map((tech, key) => (
                                         <span
                                             key={key}
-                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                            hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+                                            className="bg-pink-600/10 text-pink-400 py-1 px-3 rounded-full text-sm hover:bg-pink-600/20 
+                                            hover:shadow-[0_2px_8px_rgba(255,105,180,0.3)] transition">
                                             {tech}
                                         </span>
                                     ))}
                                 </div>
                             </div>
                         </div>
-                        <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-                            <h3 className="text-xl font-bold mb-4">
+                        <div className="bg-black p-6 rounded-xl border-pink-500/10 border hover:-translate-y-1 transition-all mt-6">
+                            <h3 className="text-xl text-gray-300 font-bold mb-4">
                                 💼Arbete
                             </h3>
                             <div className="space-y-4 text-gray-300">
@@ -138,17 +138,17 @@ export const About = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 mb:grid-cols-2 gap-6 mt-8">
-                            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-                                <h3 className="text-xl font-bold mb-4">
+                        <div className="bg-black grid grid-cols-1 mb:grid-cols-2 gap-6 mt-8">
+                            <div className="p-6 rounded-xl border-pink-500/10 border hover:-translate-y-1 transition-all">
+                                <h3 className="text-xl font-bold mb-4 text-gray-300">
                                     🎓Relevanta kurser
                                 </h3>
                                 <div className="flex flex-wrap gap-2">
                                     {courses.map((course, index) => (
                                         <span
                                             key={index}
-                                            className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                        hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+                                            className="bg-pink-600/10 text-pink-400 py-1 px-3 rounded-full text-sm hover:bg-pink-600/20 
+                                            hover:shadow-[0_2px_8px_rgba(255,105,180,0.3)] transition">
                                             {course}
                                         </span>
                                     ))}
