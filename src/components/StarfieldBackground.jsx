@@ -1,10 +1,29 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
-import { useEffect, useState, useRef, useMemo } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import * as THREE from "three";
+import { throttle } from "../utils.js"; // <-- Import throttle
 
+// === Custom Hook ===
+const useThrottledScrollY = (delay = 100) => {
+  const scrollY = useRef(0);
+
+  useEffect(() => {
+    const updateScroll = () => {
+      scrollY.current = window.scrollY;
+    };
+
+    const throttledScroll = throttle(updateScroll, delay);
+
+    window.addEventListener("scroll", throttledScroll);
+    return () => window.removeEventListener("scroll", throttledScroll);
+  }, [delay]);
+
+  return scrollY;
+};
+
+// === AnimatedStars ===
 const AnimatedStars = () => {
-
   const { scene } = useThree();
 
   useFrame(() => {
@@ -13,49 +32,34 @@ const AnimatedStars = () => {
 
   return (
     <Stars
-      radius={100} // Hur långt bort stjärnorna är
-      depth={50}   // Hur djupt in i rymden
-      count={600} // Antal stjärnor
-      factor={5}   // Storleksfaktor
-      saturation={0} // 0 = vit
-      fade={true}  // Fade-effekt
-      speed={1}    // Hastighet (kan justeras, men påverkar inte denna lösning)
+      radius={100}
+      depth={50}
+      count={600}
+      factor={5}
+      saturation={0}
+      fade={true}
+      speed={1}
     />
   );
 };
 
+// === MovingCamera ===
 const MovingCamera = () => {
   const { camera } = useThree();
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const scrollY = useThrottledScrollY(25);
 
   useFrame(() => {
-    const targetZ = 1 + scrollY * 0.03;
+    const targetZ = 1 + scrollY.current * 0.03;
     camera.position.z += (targetZ - camera.position.z) * 0.6;
   });
 
   return null;
 };
 
+// === BackgroundFade ===
 const BackgroundFade = () => {
   const { scene } = useThree();
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const scrollY = useThrottledScrollY(25);
 
   const startColor = useMemo(() => new THREE.Color("#000414"), []);
   const endColor = useMemo(() => new THREE.Color("#000000"), []);
@@ -63,8 +67,7 @@ const BackgroundFade = () => {
 
   useFrame(() => {
     const maxScroll = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = Math.min(scrollY / (maxScroll / 2), 1);
-
+    const scrollPercent = Math.min(scrollY.current / (maxScroll / 2), 1);
     bgColor.current.copy(startColor).lerp(endColor, scrollPercent);
     scene.background = bgColor.current;
   });
@@ -72,6 +75,7 @@ const BackgroundFade = () => {
   return null;
 };
 
+// === StarfieldBackground ===
 export const StarfieldBackground = () => {
   return (
     <Canvas
